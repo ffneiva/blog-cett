@@ -1,0 +1,25 @@
+{% extends 'django\base.html' %}
+
+{% block head_title %}Logar{% endblock %}
+
+{% block title %}Logar{% endblock %}
+
+{% block content %}
+  <form class="form-signin" method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <label for="username" class="sr-only">Nome de usuário</label>
+    <input type="text" name="username" id="username" class="form-control shadow" placeholder="Nome de usuário" required autofocus>
+    <br>
+    <label for="password" class="sr-only">Senha</label>
+    <input type="password" name="password" id="password" class="form-control shadow" placeholder="Senha" required autofocus>
+    <br>
+    <div class="text-center">
+      {% if form.errors %}
+        <p class="alert alert-danger">Nome de usuário ou senha incorretos.</p>
+      {% endif %}
+      <button class="btn btn-lg btn-primary shadow btn-block" type="submit">Enviar</button>
+      {% include 'django/messages.html' %}
+    </div>
+  </form>
+  <p>Não possui conta? Crie uma <a href="{% url 'cadastrar' %}">aqui</a>.</p>
+{% endblock %}

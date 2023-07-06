@@ -1,0 +1,52 @@
+{% extends 'django/base.html' %}
+
+{% block title %}Perfil{% endblock %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <form method="POST" action="{% url 'atualizar_perfil' %}" class="container">
+      {% csrf_token %}
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <div class="input-group">
+              <input type="text" class="form-control shadow" name="nome" id="nome" value="{{ user.first_name }}">
+              <div class="input-group-append shadow">
+                <button class="btn btn-outline-secondary" type="button" id="edit_first_name"><i class="fas fa-pencil-alt"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="sobrenome">Sobrenome</label>
+            <div class="input-group">
+              <input type="text" class="form-control shadow" name="sobrenome" id="sobrenome" value="{{ user.last_name }}">
+              <div class="input-group-append shadow">
+                <button class="btn btn-outline-secondary" type="button" id="edit_last_name"><i class="fas fa-pencil-alt"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-2">
+          <label for="username">Nome de usuário</label>
+          <input type="text" class="form-control shadow" name="username" id="username" value="{{ user.username }}" readonly>
+        </div>
+        <div class="col-md-6 mt-2">
+          <label for="email">Email</label>
+          <input type="email" class="form-control shadow" id="email" value="{{ user.email }}" readonly>
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <button class="btn btn-primary shadow" id="submit_button" type="submit">Atualizar</button>
+      </div>
+    </form>
+  {% else %}
+    Clique <a href="{% url 'login'%}">aqui</a> para fazer login.
+  {% endif %}
+  
+  {% include 'django/messages.html' %}
+
+{% endblock %}

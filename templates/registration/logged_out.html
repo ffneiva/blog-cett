@@ -1,0 +1,10 @@
+{% extends 'django\base.html' %}
+
+{% block head_title %}Desconectado{% endblock %}
+
+{% block title %}Desconectado{% endblock %}
+
+{% block content %}
+  <p>Desconectado!</p>
+  Clique <a href="{% url 'login'%}">aqui</a> para fazer login novamente.
+{% endblock %}

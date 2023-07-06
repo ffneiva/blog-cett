@@ -1,0 +1,17 @@
+{% if messages %}
+<div class="messages mt-3">
+  {% for message in messages %}
+    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+      {{ message }}
+    </div>
+  {% endfor %}
+</div>
+<script>
+  setTimeout(function() {
+    var messages = document.querySelector('.messages');
+    if (messages) {
+      messages.remove();
+    }
+  }, 3000);
+</script>
+{% endif %}

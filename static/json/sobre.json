@@ -1,0 +1,18 @@
+{
+    "missao": "O CETT tem como missão promover a educação, o trabalho e a tecnologia, visando o desenvolvimento dos Colégios Tecnológicos de Goiás (Cotecs) e das Escolas do Futuro de Goiás (EFGs).",
+    "visao": "A visão do CETT é ser referência na gestão educacional dos Cotecs e EFGs, proporcionando um ambiente de ensino inovador e preparando os estudantes para os desafios do mercado de trabalho.",
+    "valores": {
+        "Excelência acadêmica": "award",
+        "Inovação educacional": "lightbulb",
+        "Compromisso com a formação profissional": "handshake",
+        "Colaboração e trabalho em equipe": "users"
+    },
+    "acoes": {
+        "Convênio CETT, RTVE e Governo": "A gestão dos Colégios Tecnológicos de Goiás (Cotecs) é realizada por meio de um convênio firmado entre a Secretaria de Estado da Retomada (SER), a Universidade Federal de Goiás (UFG) e a Fundação RTVE.",
+        "Projetos ágeis para líderes e gestores dos Cotecs": "1° Workshop de Gestão de Projetos Ágeis para Líderes e Gestores dos Colégios Tecnológicos do Estado de Goiás (Cotecs) realizado pelo Centro de Educação, Trabalho e Tecnologia da Universidade Federal de Goiás (CETT/UFG)."
+    },
+    "parcerias": [
+        "Os Colégios Tecnológicos de Goiás são instituições de ensino em parceria com a Secretaria de Estado da Retomada (SER) do Estado de Goiás e estão presentes em 16 municípios.",
+        "A Escola do Futuro é um projeto em parceria com a Secretaria de Estado de Desenvolvimento e Inovação (SEDI), do Governo de Goiás, e é focado no ensino nos eixos de Design e Cultura, Informação e Comunicação e Gestão e Negócios."
+    ]
+}

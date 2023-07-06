@@ -1,0 +1,31 @@
+{% extends 'django\base.html' %}
+{% block title %}Sobre o CETT{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <h2 class="mt-4">Missão</h2>
+    <p>{{ dados.missao }}</p>
+
+    <h2 class="mt-4">Visão</h2>
+    <p>{{ dados.visao }}</p>
+
+    <h2 class="mt-4">Valores</h2>
+    {% for valor, icone in dados.valores.items %}
+      <i style="width: 20px;" class="fas fa-{{ icone }}"></i> {{ valor }}<br>
+    {% endfor %}
+
+    <h2 class="mt-4">Ações do CETT</h2>
+    {% for acao, descricao in dados.acoes.items %}
+      <h4>{{ acao }}</h4>
+      <p>{{ descricao }}</p>
+    {% endfor %}
+
+    <h2 class="mt-4">Parcerias</h2>
+    {% for parceria in dados.parcerias %}
+      <p>{{ parceria }}</p>
+    {% endfor %}
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'django\base.html' %}
+
+{% load filtros %}
+
+{% block title %}Bem vindo ao Blog CETT{% endblock %}
+
+{% block content %}
+  <form action="{% url 'inicio' %}" method="GET" class='form-inline'>
+    <div class="form-group">
+      <label for="categoria">Categorias</label>
+      <select name="categoria" onchange="this.form.submit()" class="form-control shadow">
+        <option value="Todas">Todas</option>
+        {% for categoria in categorias %}
+          {% if categoria.titulo == categoria_selecionada %}
+            <option value="{{ categoria.titulo }}" selected>{{ categoria.titulo }}</option>
+          {% else %}
+            <option value="{{ categoria.titulo }}">{{ categoria.titulo }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+  </form>
+
+  <div class="row mt-4">
+    {% if posts %}
+      {% for post in posts %}
+        <div class="col-md-6 mb-4">
+          <div class="card-mb-4 border rounded shadow p-2">
+            <img src="{{ post.foto.url }}" class="card-img-top img-fluid" alt="Imagem do post" style="object-fit: cover; width: 100%; max-height: 100px;">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.titulo }}</h5>
+              <p class="card-text">{{ post.corpo|truncatechars:100 }}</p>
+              <div class="text-center">
+                <a href="{{ post.get_url_absoluta }}" class="btn btn-primary">Leia mais</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>Não há nenhum post adicionado.</p>
+    {% endif %}
+  </div>
+
+{% endblock %}
